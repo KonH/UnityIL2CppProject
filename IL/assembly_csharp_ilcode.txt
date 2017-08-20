@@ -1,0 +1,135 @@
+WARNING: The runtime version supported by this application is unavailable.
+Using default runtime: v4.0.30319
+.assembly extern mscorlib
+{
+  .ver 2:0:0:0
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 ) // .z\V.4..
+}
+.assembly extern UnityEngine
+{
+  .ver 0:0:0:0
+}
+.assembly 'Assembly-CSharp'
+{
+  .custom instance void class [mscorlib]System.Diagnostics.DebuggableAttribute::'.ctor'(valuetype [mscorlib]System.Diagnostics.DebuggableAttribute/DebuggingModes) =  (01 00 02 00 00 00 00 00 ) // ........
+
+  .custom instance void class [mscorlib]System.Runtime.CompilerServices.RuntimeCompatibilityAttribute::'.ctor'() =  (
+		01 00 01 00 54 02 16 57 72 61 70 4E 6F 6E 45 78   // ....T..WrapNonEx
+		63 65 70 74 69 6F 6E 54 68 72 6F 77 73 01       ) // ceptionThrows.
+
+  .permissionset reqmin = {[mscorlib]System.Security.Permissions.SecurityPermissionAttribute = {property bool 'SkipVerification' = bool(true)}}
+  .hash algorithm 0x00008004
+  .ver  0:0:0:0
+}
+.module 'Assembly-CSharp.dll' // GUID = {775ED7CF-7732-4784-99EA-CA86E9851475}
+
+.custom instance void class [mscorlib]System.Security.UnverifiableCodeAttribute::'.ctor'() =  (01 00 00 00 ) // ....
+
+
+  .class public auto ansi beforefieldinit TestBehaviour
+  	extends [UnityEngine]UnityEngine.MonoBehaviour
+  {
+    .field  private  class TestClass _test
+
+    // method line 1
+    .method public hidebysig specialname rtspecialname 
+           instance default void '.ctor' ()  cil managed 
+    {
+        // Method begins at RVA 0x2050
+	// Code size 7 (0x7)
+	.maxstack 8
+	IL_0000:  ldarg.0 
+	IL_0001:  call instance void class [UnityEngine]UnityEngine.MonoBehaviour::'.ctor'()
+	IL_0006:  ret 
+    } // end of method TestBehaviour::.ctor
+
+    // method line 2
+    .method private hidebysig 
+           instance default void Start ()  cil managed 
+    {
+        // Method begins at RVA 0x2058
+	// Code size 7 (0x7)
+	.maxstack 8
+	IL_0000:  ldarg.0 
+	IL_0001:  call instance void class TestBehaviour::InstanceMethod()
+	IL_0006:  ret 
+    } // end of method TestBehaviour::Start
+
+    // method line 3
+    .method private hidebysig 
+           instance default void InstanceMethod ()  cil managed 
+    {
+        // Method begins at RVA 0x2060
+	// Code size 18 (0x12)
+	.maxstack 8
+	IL_0000:  call void class TestClass::StaticMethod()
+	IL_0005:  ldarg.0 
+	IL_0006:  ldc.i4.0 
+	IL_0007:  newobj instance void class TestClass::'.ctor'(int32)
+	IL_000c:  stfld class TestClass TestBehaviour::_test
+	IL_0011:  ret 
+    } // end of method TestBehaviour::InstanceMethod
+
+    // method line 4
+    .method private hidebysig 
+           instance default void Update ()  cil managed 
+    {
+        // Method begins at RVA 0x2074
+	// Code size 12 (0xc)
+	.maxstack 8
+	IL_0000:  ldarg.0 
+	IL_0001:  ldfld class TestClass TestBehaviour::_test
+	IL_0006:  callvirt instance void class TestClass::InstanceMethod()
+	IL_000b:  ret 
+    } // end of method TestBehaviour::Update
+
+  } // end of class TestBehaviour
+
+  .class public auto ansi beforefieldinit TestClass
+  	extends [mscorlib]System.Object
+  {
+    .field  private  int32 _a
+
+    // method line 5
+    .method public hidebysig specialname rtspecialname 
+           instance default void '.ctor' (int32 a)  cil managed 
+    {
+        // Method begins at RVA 0x2084
+	// Code size 14 (0xe)
+	.maxstack 8
+	IL_0000:  ldarg.0 
+	IL_0001:  call instance void object::'.ctor'()
+	IL_0006:  ldarg.0 
+	IL_0007:  ldarg.1 
+	IL_0008:  stfld int32 TestClass::_a
+	IL_000d:  ret 
+    } // end of method TestClass::.ctor
+
+    // method line 6
+    .method public static hidebysig 
+           default void StaticMethod ()  cil managed 
+    {
+        // Method begins at RVA 0x2094
+	// Code size 1 (0x1)
+	.maxstack 8
+	IL_0000:  ret 
+    } // end of method TestClass::StaticMethod
+
+    // method line 7
+    .method public hidebysig 
+           instance default void InstanceMethod ()  cil managed 
+    {
+        // Method begins at RVA 0x2098
+	// Code size 15 (0xf)
+	.maxstack 8
+	IL_0000:  ldarg.0 
+	IL_0001:  dup 
+	IL_0002:  ldfld int32 TestClass::_a
+	IL_0007:  ldc.i4.1 
+	IL_0008:  add 
+	IL_0009:  stfld int32 TestClass::_a
+	IL_000e:  ret 
+    } // end of method TestClass::InstanceMethod
+
+  } // end of class TestClass
+
