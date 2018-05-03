@@ -6,6 +6,7 @@
 # include <malloc.h>
 #endif
 
+
 #include <cstring>
 #include <string.h>
 #include <stdio.h>
@@ -33,8 +34,8 @@ extern const uint32_t TestBehaviour_InstanceMethod_m1909480579_MetadataUsageId;
 
 
 
-#ifndef U3CMODULEU3E_T692745535_H
-#define U3CMODULEU3E_T692745535_H
+#ifndef U3CMODULEU3E_T692745536_H
+#define U3CMODULEU3E_T692745536_H
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -42,7 +43,7 @@ extern const uint32_t TestBehaviour_InstanceMethod_m1909480579_MetadataUsageId;
 #endif
 
 // <Module>
-struct  U3CModuleU3E_t692745535 
+struct  U3CModuleU3E_t692745536 
 {
 public:
 
@@ -52,7 +53,7 @@ public:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-#endif // U3CMODULEU3E_T692745535_H
+#endif // U3CMODULEU3E_T692745536_H
 #ifndef RUNTIMEOBJECT_H
 #define RUNTIMEOBJECT_H
 #ifdef __clang__
@@ -444,6 +445,7 @@ extern "C"  void TestBehaviour_Update_m1067916034 (TestBehaviour_t1573233452 * _
 {
 	{
 		TestClass_t492893797 * L_0 = __this->get__test_2();
+		NullCheck(L_0);
 		TestClass_InstanceMethod_m1631011587(L_0, /*hidden argument*/NULL);
 		return;
 	}
